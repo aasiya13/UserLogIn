@@ -12,6 +12,8 @@ var multer = require('multer');
 var flash = require('connect-flash');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
+
+//mongoose.connect('mongodb://localhost:27017/nodeauth');
 var db = mongoose.connection;
 
 var index = require('./routes/index');
