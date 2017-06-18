@@ -1,7 +1,9 @@
 var express = require('express');
+var router = express.Router();
 var passport = require('passport');
 var localStrategy = require('passport-local').Strategy
-var router = express.Router();
+
+
 
 var User = require('../models/user');
 
@@ -119,7 +121,7 @@ passport.use(new localStrategy(
   }
 ));
 
-router.post('/login',passport.authenticate('local',{failureRedirect:'users/login', failureFlash:'Invalid username or password'}),function(req,res){
+router.post('/login',passport.authenticate('local',{failureRedirect:'/users/login', failureFlash:'Invalid username or password'}),function(req,res){
   console.log('Authentication successful');
   req.flash('success','You are logged in');
   res.redirect('/');
