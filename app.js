@@ -72,6 +72,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.get('^',function(req, res, next){ // all routes
+  res.locals.user = req.user || null;
+  next();
+});
+
+
 app.use('/', index);
 app.use('/users', users);
 
