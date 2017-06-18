@@ -77,7 +77,6 @@ app.get('^',function(req, res, next){ // all routes
   next();
 });
 
-
 app.use('/', index);
 app.use('/users', users);
 
